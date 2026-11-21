@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>원위브(OneWeave) · 지켜락 — 1R 창업활동자금 200만 원 완전 실행 가이드</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --text-muted: #475569;
+    --primary: #2563eb;
+    --primary-soft: #eff6ff;
+    --green: #059669;
+    --green-soft: #ecfdf5;
+    --amber: #d97706;
+    --amber-soft: #fffbeb;
+    --red: #dc2626;
+    --red-soft: #fef2f2;
+    --purple: #7c3aed;
+    --purple-soft: #f5f3ff;
+    --shadow: 0 1px 3px rgba(15,23,42,.06), 0 4px 12px rgba(15,23,42,.04);
+    --radius: 14px;
+  }
+  [data-theme="dark"] {
+    --bg: #0b1120;
+    --surface: #111827;
+    --surface-2: #1e293b;
+    --border: #273449;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --primary: #60a5fa;
+    --primary-soft: rgba(59,130,246,.14);
+    --green: #34d399;
+    --green-soft: rgba(16,185,129,.14);
+    --amber: #fbbf24;
+    --amber-soft: rgba(245,158,11,.14);
+    --red: #f87171;
+    --red-soft: rgba(239,68,68,.14);
+    --purple: #a78bfa;
+    --purple-soft: rgba(139,92,246,.14);
+    --shadow: 0 2px 10px rgba(0,0,0,.35);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+    padding-bottom: 80px;
+  }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Top Sticky Nav */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.02em;
+  }
+  .brand .pill {
+    background: var(--primary);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 5px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+  }
+  .nav-links a:hover { background: var(--surface-2); color: var(--text); text-decoration: none; }
+  .theme-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Container */
+  .container { max-width: 1120px; margin: 0 auto; padding: 24px 16px 0; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #0284c7 100%);
+    color: #fff;
+    border-radius: 18px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    margin-bottom: 22px;
+  }
+  .hero-meta { font-size: 12px; opacity: .88; font-weight: 600; letter-spacing: .02em; margin-bottom: 6px; }
+  .hero h1 { font-size: clamp(22px, 3.6vw, 30px); line-height: 1.25; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .hero p { font-size: 14.5px; opacity: .94; max-width: 780px; }
+  .dday-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .dday-card {
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .dday-card.urgent { background: rgba(251,191,36,.22); border-color: rgba(253,224,71,.6); }
+  .dday-date { font-size: 12px; font-weight: 700; opacity: .9; }
+  .dday-title { font-size: 15px; font-weight: 800; margin-top: 2px; }
+  .dday-sub { font-size: 12px; opacity: .88; margin-top: 2px; }
+
+  /* Rule Strip */
+  .rule-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+  .rule-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .rule-item strong { display: block; font-size: 14px; margin-bottom: 4px; }
+  .rule-item span { font-size: 13px; color: var(--text-muted); }
+
+  /* Section */
+  section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 72px;
+  }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 2px solid var(--surface-2);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+  .sec-head h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; }
+  .sec-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+  }
+  h3 { font-size: 16px; font-weight: 700; margin: 20px 0 10px; letter-spacing: -0.01em; }
+  h4 { font-size: 14.5px; font-weight: 700; margin: 14px 0 6px; }
+  p { margin-bottom: 10px; }
+  ul, ol { padding-left: 20px; margin-bottom: 12px; }
+  li { margin-bottom: 5px; }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .b-green { background: var(--green-soft); color: var(--green); }
+  .b-red { background: var(--red-soft); color: var(--red); }
+  .b-amber { background: var(--amber-soft); color: var(--amber); }
+  .b-blue { background: var(--primary-soft); color: var(--primary); }
+  .b-purple { background: var(--purple-soft); color: var(--purple); }
+
+  /* Callouts */
+  .callout {
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    border-left: 4px solid;
+    font-size: 14px;
+  }
+  .callout.info { background: var(--primary-soft); border-color: var(--primary); }
+  .callout.warn { background: var(--amber-soft); border-color: var(--amber); }
+  .callout.danger { background: var(--red-soft); border-color: var(--red); }
+  .callout.ok { background: var(--green-soft); border-color: var(--green); }
+  .callout-title { font-weight: 800; margin-bottom: 4px; display: block; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin: 12px 0 16px; border: 1px solid var(--border); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--surface-2); font-weight: 700; font-size: 12.5px; color: var(--text-muted); white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; }
+
+  /* Cards grid */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin: 12px 0; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 12px 0; }
+  .card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .card h4 { margin-top: 0; margin-bottom: 8px; }
+
+  /* Steps */
+  .steps { counter-reset: step; list-style: none; padding-left: 0; }
+  .steps li {
+    position: relative;
+    padding: 12px 14px 12px 48px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .steps li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Budget Calculator */
+  .calc-presets { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .btn:hover { border-color: var(--primary); color: var(--primary); }
+  .btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .btn.primary:hover { opacity: .92; color: #fff; }
+
+  .calc-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 18px; align-items: start; }
+  @media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; } }
+  .calc-row {
+    display: grid;
+    grid-template-columns: 1fr 165px;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    background: var(--surface-2);
+  }
+  @media (max-width: 560px) { .calc-row { grid-template-columns: 1fr; } }
+  .calc-row label { font-size: 13.5px; font-weight: 700; display: block; }
+  .calc-row small { font-size: 12px; color: var(--text-muted); display: block; }
+  .calc-row select, .calc-row input[type="number"] {
+    width: 100%;
+    padding: 7px 9px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .summary-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    position: sticky;
+    top: 70px;
+  }
+  .summary-big { font-size: 28px; font-weight: 900; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .bar-bg { width: 100%; height: 12px; background: var(--border); border-radius: 999px; overflow: hidden; margin: 10px 0 14px; }
+  .bar-fill { height: 100%; background: var(--primary); border-radius: 999px; transition: width .25s ease, background .25s ease; }
+  .stat-line { display: flex; justify-content: space-between; font-size: 13.5px; padding: 5px 0; border-bottom: 1px dashed var(--border); }
+  .stat-line:last-of-type { border-bottom: none; }
+  #calcWarnings { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+  .warn-chip { font-size: 12.5px; padding: 8px 10px; border-radius: 8px; font-weight: 600; }
+  .warn-chip.danger { background: var(--red-soft); color: var(--red); }
+  .warn-chip.amber { background: var(--amber-soft); color: var(--amber); }
+  .warn-chip.ok { background: var(--green-soft); color: var(--green); }
+
+  /* Mail box */
+  .mail-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 13.5px;
+    white-space: pre-wrap;
+    font-family: inherit;
+    line-height: 1.7;
+  }
+  .copy-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 10px; flex-wrap: wrap; }
+
+  /* Interactive Checklist */
+  .check-list { list-style: none; padding-left: 0; }
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    background: var(--surface-2);
+    cursor: pointer;
+  }
+  .check-list input[type="checkbox"] { margin-top: 4px; width: 17px; height: 17px; accent-color: var(--primary); cursor: pointer; }
+  .check-list li.done { opacity: .62; }
+  .check-list li.done .chk-text { text-decoration: line-through; }
+
+  /* Domain filter */
+  .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .filter-btn { padding: 5px 11px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-muted); font-size: 12.5px; font-weight: 700; cursor: pointer; }
+  .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+  footer {
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="pill">2차 모두의 창업 1R</span>
+      <span>원위브(OneWeave) · 지켜락 집행 완전 가이드</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#calc">예산 계산기</a>
+      <a href="#domain">도메인 실조회·가격</a>
+      <a href="#office">비상주 오피스</a>
+      <a href="#trademark">상표권 출원</a>
+      <a href="#biz">사업자·법인 등록</a>
+      <a href="#ai">Claude·Codex</a>
+      <a href="#action">메일·8일 일정</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle" type="button">🌙 다크</button>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-meta">기준일: 2026-11-22 · 한국핀테크지원센터 1R 진출자 지원 안내 책자(27-6) · 2차 공고문 · RDAP/WHOIS 실조회 기반</div>
+    <h1>원위브(회사명) + 지켜락(서비스명)<br>200만 원 창업활동자금 완전 실행 가이드</h1>
+    <p>
+      <strong>목표 구성:</strong> ① 운영사 <code>원위브(OneWeave)</code> + 상품 <code>지켜락(JikyeoLock)</code> 도메인·상표 확보
+      ② 사업자등록 주소지 조건을 충족하는 비상주 공유오피스 검토
+      ③ 남은 전액 <strong>Claude Max($200) + Codex / ChatGPT Pro($200)</strong> 원화 집행
+      ④ 12/1(화) 13:00 최종 서류(사업계획서·활동보고서·증빙) 무결점 제출.
+    </p>
+    <div class="dday-grid">
+      <div class="dday-card urgent">
+        <div class="dday-date">내일 · 11/23(월) 13:00~17:40</div>
+        <div class="dday-title">1R 기초교육 &amp; 사업비 Q&amp;A</div>
+        <div class="dday-sub">13:10~13:50 집행기준·사전질문 답변 (현장/유튜브)</div>
+      </div>
+      <div class="dday-card">
+        <div class="dday-date">11/25(수) 마감</div>
+        <div class="dday-title">AI 솔루션 2개월차 신청</div>
+        <div class="dday-sub">별도 100만 원 한도 (12/1~12/31 이용)</div>
+      </div>
+      <div class="dday-card urgent">
+        <div class="dday-date">12/1(화) 13:00 정각</div>
+        <div class="dday-title">최종 제출 마감 (연장 없음)</div>
+        <div class="dday-sub">사업계획서(8p) + 활동보고서(7p)·증빙 ZIP</div>
+      </div>
+      <div class="dday-card">
+        <div class="dday-date">12/4(금) 종료</div>
+        <div class="dday-title">신한 선불카드 사용 마감</div>
+        <div class="dday-sub">미사용 잔액 소멸 · 미사용 감점 없음</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORE RULES -->
+  <div class="rule-strip">
+    <div class="rule-item">
+      <strong>💳 국내 전용 원화 선불카드</strong>
+      <span>해외 외화 결제(USD) 차단. <strong>원화(KRW) 경로</strong>(국내 인앱결제·국내 PG·국내 대행사)만 승인됨. 개인 선결제 환급 불가.</span>
+    </div>
+    <div class="rule-item">
+      <strong>🚨 50만 원 초과 사전승인 &amp; 합산 규칙</strong>
+      <span>단일 건(VAT 포함) 또는 <strong>같은 날 같은 가맹점 합산 50만 원 초과 시 결제 전 멘토기관 사전승인 필수</strong>. 분할 결제=부정 집행.</span>
+    </div>
+    <div class="rule-item">
+      <strong>🧾 PG·온라인 결제는 금액 무관 증빙</strong>
+      <span>10만 원 미만이어도 PG/온라인 결제는 <strong>① 주문상세내역서(판매자 상호·사업자등록번호·품목·금액) + ② 결과물/서비스 화면 캡처</strong> 필수.</span>
+    </div>
+    <div class="rule-item">
+      <strong>⚖️ 적정성 유일 기준 = 아이템 연관성</strong>
+      <span>200만 원 미사용 감점 없음. 단, 목적 외 사용·사업자 지출증빙/부가세 환급 처리는 <strong>환수 + 2R 감점 + 참여 제한</strong>.</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: INTERACTIVE CALCULATOR -->
+  <section id="calc">
+    <div class="sec-head">
+      <h2>🧮 1. 200만 원 실시간 예산 시뮬레이터</h2>
+      <span class="sec-tag">단건 50만 초과 · 스토어 합산 자동 점검</span>
+    </div>
+    <p>기집행 금액(신한카드 앱 실제 승인액)과 각 항목 옵션을 바꾸면 <strong>총액·잔액·규정 경고</strong>가 즉시 계산됩니다.</p>
+
+    <div class="calc-presets">
+      <button class="btn primary" type="button" onclick="applyPreset('full')">프리셋 A: 풀패키지 (비상주 1년 포함 ~198만)</button>
+      <button class="btn" type="button" onclick="applyPreset('noOffice')">프리셋 B: 비상주 제외 · AI+브랜드 집중 (~168만)</button>
+      <button class="btn" type="button" onclick="applyPreset('safe')">프리셋 C: 실속형 (상표 2류+도메인 1년+AI ~150만)</button>
+    </div>
+
+    <div class="calc-grid">
+      <div>
+        <div class="calc-row">
+          <div>
+            <label for="cUsed">0. 기집행 — Antigravity (신한카드 앱 실금액)</label>
+            <small>신한카드 앱 승인내역의 실제 원화 금액으로 수정하세요</small>
+          </div>
+          <input id="cUsed" type="number" step="1000" value="300000" oninput="recalc()">
+        </div>
+
+        <div class="calc-row">
+          <div>
+            <label for="cTm">1. 상표 출원 (지켜락 + 원위브)</label>
+            <small>지급수수료 · 마크인포/헬프미 원화 일괄 카드결제 (출원번호 확보)</small>
+          </div>
+          <select id="cTm" onchange="recalc()">
+            <option value="0">미집행 (0원)</option>
+            <option value="188800">2류(각 1류) 마크인포 간편 (~18.9만)</option>
+            <option value="224000">2류(각 1류) 헬프미 베이직 (~22.4만)</option>
+            <option value="298800">2류(각 1류) 마크인포 조사형 (~29.9만)</option>
+            <option value="377600" selected>4류(각 2류: 9·42류) 마크인포 간편 (~37.8만)</option>
+            <option value="448000">4류(각 2류: 9·42류) 헬프미 베이직 (~44.8만)</option>
+          </select>
+        </div>
+
+        <div class="calc-row">
+          <div>
+            <label for="cDom">2. 도메인 등록 (jikyeolock + oneweave)</label>
+            <small>지급수수료 · 호스팅KR/가비아 원화 카드결제 (개발·API 테스트용)</small>
+          </div>
+          <select id="cDom" onchange="recalc()">
+            <option value="0">미집행 (0원)</option>
+            <option value="65000">실속 4종 1년 — 호스팅KR (~6.5만)</option>
+            <option value="145000" selected>브랜드 5종 2년 — 호스팅KR/가비아 (~14.5만)</option>
+            <option value="230000">브랜드 6종 3년 다년 등록 (~23만)</option>
+          </select>
+        </div>
+
+        <div class="calc-row">
+          <div>
+            <label for="cOff">3. 비상주 공유오피스 (사업자 주소지용)</label>
+            <small>지급수수료 · ⚠️ 12/4 이후 선결제 인정 여부 11/23 확인 필수</small>
+          </div>
+          <select id="cOff" onchange="recalc()">
+            <option value="0">미집행 / 2R 이후 계약 (0원)</option>
+            <option value="240000">마이파트너스 등 12개월 가성비 (~24만)</option>
+            <option value="264000">패스트워크 6개월 (~26.4만, 월 4.4만)</option>
+            <option value="330000" selected>패스트워크 12개월 (~33만, 월 2.75만)</option>
+          </select>
+        </div>
+
+        <div class="calc-row">
+          <div>
+            <label for="cGpt">4. ChatGPT Pro ($200, Codex 포함)</label>
+            <small>지급수수료 · 국내 원화 인앱결제 (1개월, 12/4 이후 이용 인정)</small>
+          </div>
+          <select id="cGpt" onchange="recalc()">
+            <option value="0">미집행 (0원)</option>
+            <option value="299000" selected>Apple App Store 원화 (299,000원)</option>
+            <option value="310000">Google Play 원화 (~310,000원)</option>
+          </select>
+        </div>
+
+        <div class="calc-row">
+          <div>
+            <label for="cClaude">5. Claude Max ($200 / $100)</label>
+            <small>지급수수료 · 국내 원화 인앱결제 (⚠️ ChatGPT와 다른 날/다른 스토어!)</small>
+          </div>
+          <select id="cClaude" onchange="recalc()">
+            <option value="0">미집행 (0원)</option>
+            <option value="199000">Apple App Store Max 5x (199,000원)</option>
+            <option value="449000" selected>Apple App Store Max 20x (449,000원)</option>
+          </select>
+        </div>
+
+        <div class="calc-row">
+          <div>
+            <label for="cEtc">6. 기타 (모임 총무 인터뷰 회의비 · 법령 도서)</label>
+            <small>여비·회의비(목적·동석자·사진) / 문헌구입비(교보문고 등)</small>
+          </div>
+          <input id="cEtc" type="number" step="10000" value="80000" oninput="recalc()">
+        </div>
+      </div>
+
+      <div class="summary-box">
+        <div style="font-size:12.5px;color:var(--text-muted);font-weight:700;">예상 총 집행액 (한도 2,000,000원)</div>
+        <div class="summary-big" id="sumTotal">1,980,600원</div>
+        <div class="bar-bg"><div class="bar-fill" id="sumBar" style="width:99%"></div></div>
+        <div class="stat-line"><span>지원금 한도</span><strong>2,000,000원</strong></div>
+        <div class="stat-line"><span>기집행 (Antigravity)</span><span id="stUsed">300,000원</span></div>
+        <div class="stat-line"><span>신규 집행 예정</span><span id="stNew">1,680,600원</span></div>
+        <div class="stat-line"><span>예상 잔액 (12/4 후 소멸)</span><strong id="stRemain">19,400원</strong></div>
+        <div id="calcWarnings"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: DOMAIN -->
+  <section id="domain">
+    <div class="sec-head">
+      <h2>🌐 2. 도메인 실등록 가능 여부 · 업체별 가격 · 집행 방법</h2>
+      <span class="sec-tag">2026-11-22 RDAP/WHOIS/DNS 실조회 완료</span>
+    </div>
+
+    <h3>2-1. <code>jikyeolock</code> · <code>oneweave</code> 23개 도메인 실조회 결과</h3>
+    <p>
+      <strong>핵심 발견:</strong> <code>jikyeolock</code> 계열은 <code>.com</code>·<code>.kr</code>·<code>.app</code> 포함 <strong>전부 등록 가능</strong>합니다.
+      반면 <code>oneweave</code>는 <code>.com</code>(2013년 등록)·<code>.net</code>·<code>.app</code>·<code>.io</code>·<code>.ai</code>가 <strong>이미 선점</strong>되어 있어,
+      <strong><code>oneweave.kr</code> · <code>oneweave.co.kr</code> · <code>oneweave.dev</code> · <code>oneweavehq.com</code> · <code>oneweave.ai.kr</code></strong> 중에서 잡아야 합니다.
+    </p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" type="button" onclick="filterDomains('all', this)">전체 (23)</button>
+      <button class="filter-btn" type="button" onclick="filterDomains('avail', this)">등록 가능만 보기</button>
+      <button class="filter-btn" type="button" onclick="filterDomains('jikyeo', this)">지켜락 (jikyeolock)</button>
+      <button class="filter-btn" type="button" onclick="filterDomains('oneweave', this)">원위브 (oneweave)</button>
+    </div>
+
+    <div class="table-wrap">
+      <table id="domainTable">
+        <thead>
+          <tr>
+            <th>도메인</th>
+            <th>구분</th>
+            <th>실조회 상태 (2026-11-22)</th>
+            <th>예상 1년가 (호스팅KR / 가비아)</th>
+            <th>비고 · 선점 현황</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono"><strong>jikyeolock.com</strong></td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~12,200 / 20,900원</td><td>⭐ 1순위 글로벌 대표 도메인</td></tr>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono"><strong>jikyeolock.kr</strong></td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~10,780 / 17,600원</td><td>⭐ 1순위 국내 대표 도메인</td></tr>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono">jikyeolock.co.kr</td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~10,780 / 17,600원</td><td>기업/서비스 방어용</td></tr>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono"><strong>jikyeolock.app</strong></td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~18,000 / 19,800원</td><td>⭐ 모바일 앱·딥링크용 (HTTPS 기본)</td></tr>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono">jikyeolock.dev</td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~18,000 / 19,800원</td><td>개발·스테이징 API 서버용</td></tr>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono">jikyeolock.io</td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~100,000 / 71,500원</td><td>고가(연장 ~11만), 필요 시 선택</td></tr>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono">jikyeolock.ai</td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">2년 ~27~30만 원</td><td>최소 2년 필수(고가)</td></tr>
+          <tr data-group="jikyeo" data-avail="1"><td class="mono">jikyeolock.ai.kr / .io.kr</td><td>상품(지켜락)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~10,780 / 17,600원</td><td>저렴한 국내 3단계 도메인</td></tr>
+
+          <tr data-group="oneweave" data-avail="1"><td class="mono"><strong>oneweave.kr</strong></td><td>회사(원위브)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~10,780 / 17,600원</td><td>⭐ 1순위 회사 대표 도메인</td></tr>
+          <tr data-group="oneweave" data-avail="1"><td class="mono"><strong>oneweave.co.kr</strong></td><td>회사(원위브)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~10,780 / 17,600원</td><td>⭐ 1순위 법인/기업 공식 도메인</td></tr>
+          <tr data-group="oneweave" data-avail="1"><td class="mono"><strong>oneweave.dev</strong></td><td>회사(원위브)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~18,000 / 19,800원</td><td>⭐ 개발·인프라·API 엔드포인트용</td></tr>
+          <tr data-group="oneweave" data-avail="1"><td class="mono">oneweavehq.com</td><td>회사(원위브)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~12,200 / 20,900원</td><td><code>.com</code> 대안 (글로벌 본사형)</td></tr>
+          <tr data-group="oneweave" data-avail="1"><td class="mono">oneweavelab.com</td><td>회사(원위브)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~12,200 / 20,900원</td><td><code>.com</code> 대안 (연구소/개발사형)</td></tr>
+          <tr data-group="oneweave" data-avail="1"><td class="mono">oneweave.ai.kr / .io.kr / .it.kr</td><td>회사(원위브)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~10,780 / 17,600원</td><td>국내 테크/AI 3단계 도메인</td></tr>
+          <tr data-group="oneweave" data-avail="1"><td class="mono">oneweave.xyz</td><td>회사(원위브)</td><td><span class="badge b-green">등록 가능</span></td><td class="num">~5,000~20,000원</td><td>저가 보조 도메인</td></tr>
+          <tr data-group="oneweave" data-avail="0"><td class="mono">oneweave.com</td><td>회사(원위브)</td><td><span class="badge b-red">선점됨</span></td><td class="num">-</td><td>2013-06-03 등록 (만료 2027-06-03)</td></tr>
+          <tr data-group="oneweave" data-avail="0"><td class="mono">oneweave.net</td><td>회사(원위브)</td><td><span class="badge b-red">선점됨</span></td><td class="num">-</td><td>2025-10-30 등록 (만료 2027-10-30)</td></tr>
+          <tr data-group="oneweave" data-avail="0"><td class="mono">oneweave.app</td><td>회사(원위브)</td><td><span class="badge b-red">선점됨</span></td><td class="num">-</td><td>2026-06-15 등록 (만료 2027-06-15)</td></tr>
+          <tr data-group="oneweave" data-avail="0"><td class="mono">oneweave.io</td><td>회사(원위브)</td><td><span class="badge b-red">선점됨</span></td><td class="num">-</td><td>2026-10-19 등록 (만료 2027-10-19)</td></tr>
+          <tr data-group="oneweave" data-avail="0"><td class="mono">oneweave.ai</td><td>회사(원위브)</td><td><span class="badge b-red">선점됨</span></td><td class="num">-</td><td>2026-10-19 등록 (만료 2028-10-19)</td></tr>
+          <tr data-group="oneweave" data-avail="0"><td class="mono">oneweave.tech</td><td>회사(원위브)</td><td><span class="badge b-amber">수동확인</span></td><td class="num">-</td><td>RDAP 403 반환 → 가비아/호스팅KR에서 직접 검색</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2-2. 국내 3대 등록대행사 가격 정밀 비교 (1년 기준, VAT 포함)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>확장자</th>
+            <th>호스팅KR (최저가·연장 투명)</th>
+            <th>가비아 (점유율 1위·신규 할인)</th>
+            <th>카페24 (호스팅 연계)</th>
+            <th>장기 운영 팁</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>.kr / .co.kr</strong></td>
+            <td><strong>약 10,780 ~ 11,000원</strong></td>
+            <td>신규 ~17,600원 / 연장 ~24,200원</td>
+            <td>신규 ~22,000원 / 연장 ~24,200원</td>
+            <td>호스팅KR이 연장비까지 절반 수준</td>
+          </tr>
+          <tr>
+            <td><strong>.com</strong></td>
+            <td><strong>약 12,200 ~ 14,000원</strong></td>
+            <td>신규 ~20,900원 / 연장 ~27,500원</td>
+            <td>약 2만 원대 초중반</td>
+            <td>1~10년 다년 등록 가능</td>
+          </tr>
+          <tr>
+            <td><strong>.app / .dev</strong></td>
+            <td>신규 ~16,000~19,000원<br>연장 ~21,000~26,000원</td>
+            <td>신규 ~19,800원 / 연장 ~31,900원</td>
+            <td>별도 확인</td>
+            <td>HSTS 강제 → HTTPS 자동 적용 필수</td>
+          </tr>
+          <tr>
+            <td><strong>.ai.kr / .io.kr</strong></td>
+            <td><strong>약 10,780원 선</strong></td>
+            <td>신규 ~17,600원 / 연장 ~24,200원</td>
+            <td>약 22,000원 선</td>
+            <td><code>.ai</code>/<code>.io</code> 대비 1/10 가격</td>
+          </tr>
+          <tr>
+            <td><strong>.io</strong></td>
+            <td>약 100,000 ~ 110,000원</td>
+            <td>신규 ~71,500원 / 연장 ~110,000원</td>
+            <td>별도 확인</td>
+            <td>연장 부담 큼</td>
+          </tr>
+          <tr>
+            <td><strong>.ai</strong></td>
+            <td>2년 약 269,000 ~ 300,000원</td>
+            <td>2년 약 20만 후반 ~ 30만 원대</td>
+            <td>별도 확인</td>
+            <td><strong>최소 2년 등록 필수</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>⭐ 추천 조합: 브랜드 5종 × 2년 (호스팅KR 기준 약 14~16만 원)</h4>
+        <ul>
+          <li><strong>서비스(지켜락):</strong> <code>jikyeolock.com</code> + <code>jikyeolock.kr</code> + <code>jikyeolock.app</code></li>
+          <li><strong>운영사(원위브):</strong> <code>oneweave.kr</code> + <code>oneweave.co.kr</code> (+ 선택 <code>oneweave.dev</code>)</li>
+          <li><strong>장점:</strong> 호스팅KR은 원화 카드결제·다년 등록·WHOIS 프라이버시 지원, 2년차 연장 폭탄 없음.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>🧾 창업활동자금 인정 조건 &amp; 필수 증빙</h4>
+        <ul>
+          <li><strong>규정(안내 책자 p.19):</strong> <em>“단순 홈페이지 운영·관리 목적은 불인정, 아이템 개발·구현·테스트 등 사업 수행과 직접 관련된 범위만 인정”</em></li>
+          <li><strong>증빙 3종:</strong> ① 결제 주문상세내역서(판매자 상호·사업자등록번호·주문번호·품목·금액) ② 도메인 등록 완료 화면 ③ <strong>지켜락 API/테스트 서버 DNS 레코드 연결 화면 캡처</strong></li>
+          <li><strong>연관성 소명:</strong> 사업계획서·활동보고서에 “운영 예정 상호명: 원위브(OneWeave), 개발·배포 인프라 도메인” 명시 + 11/23 사무국 확인!</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: VIRTUAL OFFICE -->
+  <section id="office">
+    <div class="sec-head">
+      <h2>🏢 3. 비상주 공유오피스 — 자금 사용 가능 여부 · 업체 비교 · 세금 함정</h2>
+      <span class="sec-tag">사업자등록 주소지 조건 충족 전용</span>
+    </div>
+
+    <div class="callout ok">
+      <span class="callout-title">✅ 창업활동자금 사용 가능? → “공유오피스 임차료”는 지급수수료에 명시 허용 (안내 책자 p.11)</span>
+      지급수수료 사용 예시에 <strong><code>공유 오피스 임차료</code></strong>가 공식 포함되어 있습니다. 단, <strong>일반 부동산 월세(계좌이체)·보증금(예치금)·부동산 중개수수료(클린카드 차단 업종)·인테리어/가구</strong>는 절대 불가하며, <strong>원화 선불카드 결제가 가능한 공유오피스</strong>만 해당합니다.
+    </div>
+
+    <div class="callout danger">
+      <span class="callout-title">⚠️ 결제 전 최우선 확인: 6~12개월 선결제 시 “12/4 이후 기간분” 인정 여부!</span>
+      소프트웨어·AI 구독은 안내 책자 FAQ(p.15, p.29)에 <em>“사용기간(12/4)을 넘겨 이용해도 인정”</em>이라고 명시되어 있으나, <strong>공유오피스 임차료는 명시 예외가 없습니다.</strong>
+      반면 배포 양식(27-1 붙임5)에는 <em>“집행기간을 초과하여 부적정, 기간 내 집행하도록 기간·금액 조정 필요”</em> 예시가 있습니다.<br>
+      👉 <strong>반드시 내일(11/23) 13:00 교육 Q&amp;A 또는 사무국 메일 회신으로 “6~12개월 선결제 인정 여부”를 서면 확인한 뒤 결제하세요!</strong> (불인정이면 11/23~12/4 단기 이용분만 쓰거나 비상주는 2R 확정 후 진행하는 것이 안전)
+    </div>
+
+    <h3>3-1. 대표 비상주 공유오피스 브랜드 비교 (서울 · 비과밀권역)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>브랜드 / 유형</th>
+            <th>6개월 / 12개월 시세 (VAT 포함)</th>
+            <th>카드결제</th>
+            <th>전대동의서·실사지원</th>
+            <th>특징 · 추천 대상</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>패스트파이브<br>(패스트워크)</strong></td>
+            <td>6개월: 월 ~44,000원 (총 ~26.4만)<br>12개월: 월 ~27,500원 (총 ~33만)</td>
+            <td><span class="badge b-green">온라인 카드 가능</span></td>
+            <td><span class="badge b-green">정식 직영·매니저 실사지원</span></td>
+            <td>대형 브랜드, 전자계약·영수증·우편물 알림 깔끔. <strong>증빙 안전성 최상</strong></td>
+          </tr>
+          <tr>
+            <td><strong>마이파트너스</strong></td>
+            <td>6개월: 월 3~4만 원대 (~18~24만)<br>12개월: 월 2만 원대 (~20~26만)</td>
+            <td><span class="badge b-green">카드 가능</span><br><small>(지점별 사전확인)</small></td>
+            <td><span class="badge b-green">자체/직영 비율 높음·실사지원</span></td>
+            <td>강남·서초권 가성비 최강. 초기 고정비 절감형</td>
+          </tr>
+          <tr>
+            <td><strong>스파크플러스</strong></td>
+            <td>비상주 단독보다 데스크·라운지 결합형 중심 (특가 월 3만~수십만)</td>
+            <td><span class="badge b-green">온라인 카드 가능</span></td>
+            <td><span class="badge b-green">마스터리스·매니저 대응</span></td>
+            <td>실제 라운지/회의실도 가끔 쓸 예정이면 유리</td>
+          </tr>
+          <tr>
+            <td><strong>워크플렉스<br>(한화생명)</strong></td>
+            <td>중고가 (프라임 빌딩 지점별 문의)</td>
+            <td><span class="badge b-green">대기업 시스템 원활</span></td>
+            <td><span class="badge b-green">직영 프라임 빌딩</span></td>
+            <td>대외 신인도·투자/B2B 주소지 중시 시</td>
+          </tr>
+          <tr>
+            <td><strong>비과밀권역 비상주<br>(동탄·용인·송도)</strong></td>
+            <td>월 2~5만 원대<br>(12개월 ~24~36만, 네이버스토어 등)</td>
+            <td><span class="badge b-amber">업체별 확인 필수</span></td>
+            <td><span class="badge b-amber">전대·실사 역량 편차 큼</span></td>
+            <td><strong>세액감면·법인 중과 면제</strong> 목적이나 <strong>아래 국세청 실사 경고 필독!</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3-2. 서울(과밀억제권역) vs 동탄·용인·송도(비과밀억제권역) &amp; 국세청 실사 주의보</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>💰 창업중소기업 세액감면 (조세특례제한법 제6조)</h4>
+        <ul>
+          <li>소프트웨어 개발업(<code>722000</code>)은 창업중소기업 세액감면 업종입니다.</li>
+          <li><strong>청년(만 15~34세):</strong> 수도권 과밀억제권역 내 <strong>50%</strong> / 비과밀권역(화성 동탄, 용인 대부분, 인천 송도 등) <strong>100% (5년간)</strong>.</li>
+          <li><strong>일반(만 35세 이상):</strong> 과밀억제권역 내 <strong>0%</strong> / 비과밀권역 <strong>50% (5년간)</strong>.</li>
+          <li>법인 설립 시 등록면허세도 과밀억제권역은 <strong>3배 중과</strong>되나 비과밀권역은 일반 세율 적용.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>🚨 국세청 “비과밀 페이퍼 비상주” 집중 단속 주의!</h4>
+        <ul>
+          <li>실제 개발·집무는 서울(과밀권역) 자택·사무실에서 하면서 <strong>세금 감면만 노리고 동탄/송도/용인 비상주에 주소만 두면</strong>, 국세청이 <strong>실질 사업장을 부인해 감면세액 전액 추징 + 가산세</strong>를 부과하는 사례가 매우 많습니다.</li>
+          <li>실제로 그 권역에서 주된 업무를 보거나 상주·출근 흔적을 남길 게 아니라면, <strong>단순 감면 목적의 비과밀 비상주는 위험</strong>합니다.</li>
+          <li>반대로 자택(자가 또는 임대인 동의 시)으로도 IT 소프트웨어 개발업 사업자등록은 법적으로 가능합니다(단, 주소 노출·법인 설립 시 비상주 선호).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>3-3. 비상주 오피스 계약 전 필수 체크 6가지</h3>
+    <ol class="steps">
+      <li><strong>무보증금 + 원화 카드결제 확인:</strong> 보증금(예치금)은 환급성이라 창업활동자금 불가. 온라인 PG 또는 현장 단말기 카드결제 가능 여부 확인.</li>
+      <li><strong>가맹점 업종 확인:</strong> 신한 클린 선불카드는 <code>부동산중개</code> 업종을 자동 차단합니다. 결제 전 공유오피스 사업자의 카드 가맹 업종이 차단 업종이 아닌지 확인(소액 또는 결제창 테스트).</li>
+      <li><strong>건축물대장 용도 확인:</strong> 반드시 <strong>근린생활시설 또는 업무시설</strong>이어야 세무서 사업자등록이 반려되지 않습니다.</li>
+      <li><strong>건물주 전대동의서(또는 직영/소유):</strong> 무단 전대 저가 업체는 세무서 직권폐업 위험 → 정식 전대 동의서 포함 임대차계약서 발급 확인.</li>
+      <li><strong>현장 실사 대응 &amp; 우편물 스캔:</strong> 세무서·구청 실사 방문 시 상주 매니저가 대응해 주는지, 국세청 등기 우편물 스캔 알림이 무료인지 확인.</li>
+      <li><strong>증빙 구비(PG/10만 원 이상):</strong> 결제 주문상세내역서(사업자등록번호 포함) + <strong>임대차계약서 사본</strong> + 오피스 공간/이용 안내 캡처 보관. (단건 50만 원 이하 유지)</li>
+    </ol>
+  </section>
+
+  <!-- SECTION 4: TRADEMARK -->
+  <section id="trademark">
+    <div class="sec-head">
+      <h2>™️ 4. 상표권 출원 완전 가이드 (원위브 + 지켜락)</h2>
+      <span class="sec-tag">1R 최고 증빙 결과물 = 출원번호통지서</span>
+    </div>
+
+    <div class="callout warn">
+      <span class="callout-title">🔍 선행상표 사전 조사 결과 — 출원 전 KIPRIS(kipris.or.kr) 정밀 조회 필수!</span>
+      <ul>
+        <li><strong>‘지켜락’:</strong> 현재 리빙브랜드(리빙크리에이터)의 실리콘 밀폐용기 제품명으로 시중에 사용 중(주방용품 <strong>제21류</strong>). 지켜락 앱/SW는 <strong>제9류·제42류</strong>로 상품류가 다르지만, <strong>KIPRIS에서 제9류·제42류에 동일·유사 상표가 없는지 반드시 확인</strong>해야 합니다.</li>
+        <li><strong>‘원위브 / OneWeave’:</strong> 해외 패션 3D 직조 기술명(unspun OneWeave™) 등이 존재. 국내 KIPRIS 제9·42류 선행상표 확인과 함께, <strong>기존에 관련 프로젝트나 타사에서 사용 중인 명칭과 권리 귀속·상표 충돌이 없는지 본인 최종 점검</strong>이 필요합니다.</li>
+      </ul>
+    </div>
+
+    <h3>4-1. 상표 출원 3가지 경로 정밀 비교 (1개 상표 · 1개 상품류 기준, VAT 포함)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>특허로 (특허청 셀프)</th>
+            <th>마크인포 (온라인 대행)</th>
+            <th>헬프미 (온라인 대행)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>특허청 관납료</strong></td>
+            <td class="num">46,000원</td>
+            <td class="num">46,000원</td>
+            <td class="num">46,000원</td>
+          </tr>
+          <tr>
+            <td><strong>대행 수수료</strong></td>
+            <td class="num">0원</td>
+            <td class="num">~48,400원(간편) ~ ~103,400원(조사형)</td>
+            <td class="num">~66,000원 (베이직)</td>
+          </tr>
+          <tr>
+            <td><strong>1상표 × 1류 총액</strong></td>
+            <td class="num"><strong>46,000원</strong></td>
+            <td class="num"><strong>~94,400 ~ 149,400원</strong></td>
+            <td class="num"><strong>~112,000원 전후</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2상표 × 2류 (총 4류)</strong></td>
+            <td class="num"><strong>184,000원</strong></td>
+            <td class="num"><strong>~377,600원 (간편)</strong></td>
+            <td class="num"><strong>~448,000원 (베이직)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>출원번호 발급 소요</strong></td>
+            <td>당일 ~ 1영업일</td>
+            <td><strong>1 ~ 2영업일</strong></td>
+            <td><strong>1 ~ 2영업일</strong></td>
+          </tr>
+          <tr>
+            <td><strong>선불카드 결제</strong></td>
+            <td><span class="badge b-amber">주의</span> 정부납부·공과금 차단 위험 확인 필요</td>
+            <td><span class="badge b-green">일반 PG 카드 일괄결제 편리</span></td>
+            <td><span class="badge b-green">일반 PG 카드 일괄결제 편리</span></td>
+          </tr>
+          <tr>
+            <td><strong>장단점</strong></td>
+            <td>최저가이나 지정상품 오기재·거절 위험, UI 복잡</td>
+            <td>가격 합리적·빠름. 거절 위험 줄이려면 조사형 선택</td>
+            <td>변리사 검토·UI 깔끔. 4류도 50만 원 이하 유지</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4-2. 지켜락·원위브 추천 지정상품류 &amp; 규정 주의사항</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>📂 추천 상품류 (각 1~2류 선택)</h4>
+        <ul>
+          <li><strong>제9류 (최우선):</strong> 내려받기 가능한 스마트폰용 응용 소프트웨어(앱), 컴퓨터 소프트웨어, 전자문서/전자서명 관리용 SW</li>
+          <li><strong>제42류 (2순위):</strong> 서비스형 소프트웨어(SaaS), 응용 소프트웨어 개발업, 플랫폼 구축·유지보수업</li>
+          <li><strong>제36류(금융) 제외 권장:</strong> 지켜락은 <strong>자금 무접촉</strong> 구조이므로 금융업 류 지정은 사업계획서 논리와 맞지 않음.</li>
+          <li><em>참고:</em> 일반 심사는 12~15개월 소요. 우선심사(관납료 16만 추가)는 3개월로 단축되지만 1R 증빙은 <strong>출원번호만 있으면 충분</strong>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>⚠️ 창업활동자금 상표 집행 필수 규칙</h4>
+        <ul>
+          <li><strong>허용 범위(안내 책자 p.20):</strong> 출원 관납료 + 변리사/대행 수수료 허용. <strong>특허/상표 등록 성공보수는 불가!</strong> (나중에 심사 통과 후 등록 관납료 ~21만 원은 1R 이후 별도 발생)</li>
+          <li><strong>50만 원 이하 유지 &amp; 분할결제 금지:</strong> 같은 플랫폼에서 두 상표 합계가 50만 원을 넘으면 사전승인 필수. 쪼개서 결제하면 부정 집행! (4류 기준 ~38~45만 원으로 50만 이하 유지 권장)</li>
+          <li><strong>타이밍:</strong> 12/1 마감 전 출원번호통지서를 받으려면 <strong>11/23(월)~24(화) 최우선 결제!</strong></li>
+          <li><strong>증빙:</strong> 플랫폼 주문상세내역서(사업자등록번호 포함) + <strong>특허청 출원번호통지서 PDF/캡처</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>4-3. 상표 출원 실행 Step-by-Step</h3>
+    <ol class="steps">
+      <li><strong>KIPRIS 무료 선행조사:</strong> <a href="https://www.kipris.or.kr" target="_blank" rel="noopener">kipris.or.kr</a> 접속 → 상표 탭 → <code>지켜락</code>, <code>원위브</code>, <code>oneweave</code> 검색 → 필터에서 상품류 <strong>09류, 42류</strong> 체크 후 동일·유사 상표 여부 확인.</li>
+      <li><strong>상표 형태 결정:</strong> 텍스트 상표(한글 <code>지켜락</code>, 한글/영문 <code>원위브</code> 또는 <code>OneWeave</code>)로 출원하면 로고 디자인이 바뀌어도 권리 범위가 넓습니다. (영문+한글 병기 vs 단독은 대행 플랫폼 상담 참고)</li>
+      <li><strong>플랫폼 신청·결제 (11/23~24):</strong> 마크인포 또는 헬프미에서 출원인 = 본인(개인, 예비창업자)으로 신청 → <strong>신한 선불카드</strong>로 50만 원 이하 일괄 결제 → <strong>결제 직후 주문상세내역서(사업자등록번호 포함) PDF 저장!</strong></li>
+      <li><strong>출원번호통지서 수령 (1~2영업일):</strong> 플랫폼 마이페이지/메일로 도착한 <strong>특허청 출원번호통지서</strong> 저장 → 활동보고서 문항2 결과물 및 붙임2 증빙으로 첨부!</li>
+    </ol>
+  </section>
+
+  <!-- SECTION 5: BUSINESS REGISTRATION -->
+  <section id="biz">
+    <div class="sec-head">
+      <h2>🏛️ 5. 사업자등록 &amp; 법인 설립 완전 가이드</h2>
+      <span class="sec-tag">언제 · 어떤 형태로 · 어떤 업종코드로</span>
+    </div>
+
+    <div class="callout danger">
+      <span class="callout-title">🛑 가장 중요한 전략 판단: 지금(1R, 11월) 당장 사업자등록을 내야 하나? → ❌ 서두르지 마세요!</span>
+      <ol style="margin-bottom:0;">
+        <li><strong>1R 의무 없음:</strong> 모두의 창업 2차 일반/기술트랙 예비창업자는 <strong>1R에 사업자등록 의무가 없습니다</strong> (후속 라운드 협약기간 종료 2개월 전까지 요건).</li>
+        <li><strong>예비창업자 자격 소실 주의:</strong> 지금 사업자를 내버리면 <strong>2027년 예비창업패키지 등 다른 ‘예비창업자’ 전용 정부지원사업 신청 자격이 즉시 사라집니다.</strong></li>
+        <li><strong>부가세·지출증빙 금지(안내 책자 p.16):</strong> 사업자를 내더라도 1R 선불카드 결제건은 사업자 경비·부가세 환급에 <strong>절대 넣으면 안 됩니다</strong>(환수·참여제한).</li>
+        <li><strong>추천 전략:</strong> 1R에서는 상표·도메인·개발(AI)을 먼저 확보하고, <strong>실제 사업자등록 신청은 2R 진출 결과(12월 중순)를 보고 진행</strong>하는 편이 가장 유리합니다!</li>
+      </ol>
+    </div>
+
+    <h3>5-1. 개인사업자 vs 법인사업자 비교 (지켜락·원위브 기준)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>개인사업자 (초기 추천)</th>
+            <th>법인사업자 (주식회사)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>설립 비용</strong></td>
+            <td><strong>0원 (무료)</strong> — 홈택스 온라인 신청</td>
+            <td>약 40~80만 원+ (등록면허세·교육세·인지세·법무사)<br><small>※ 과밀권역 등록면허세 3배 중과</small></td>
+          </tr>
+          <tr>
+            <td><strong>선불카드 결제</strong></td>
+            <td>무료이므로 해당 없음</td>
+            <td><span class="badge b-red">불가</span> 세금·공과금 업종 자동 차단 (p.25)</td>
+          </tr>
+          <tr>
+            <td><strong>소요 기간</strong></td>
+            <td>신청 후 <strong>2~3영업일</strong></td>
+            <td>설립등기 3~5일 + 사업자등록 2~3일 (약 1~2주)</td>
+          </tr>
+          <tr>
+            <td><strong>세금·자금 운용</strong></td>
+            <td>자금 인출 자유. 연 순이익 커지면 소득세율(최대 45%) 상승</td>
+            <td>법인세율 유리(9%~). 대표 급여/배당으로만 인출. 기장료 필수</td>
+          </tr>
+          <tr>
+            <td><strong>장점·적합 시점</strong></td>
+            <td>초기 MVP 검증·2R 수행에 가장 빠르고 유지비 최소 (나중에 법인 전환 가능)</td>
+            <td>투자 유치·팀 지분 분배·금융기관/B2B 제휴·공동대표 시 필수</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>5-2. 지켜락·원위브 추천 업종코드 &amp; 후속 인허가(2R 단계)</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>🏷️ 사업자등록 추천 업종코드</h4>
+        <ul>
+          <li><strong>주업종 — <code>722000</code> (응용 소프트웨어 개발 및 공급업):</strong> 자체 앱(지켜락)·SaaS 개발 및 구독/건당 결제 수익에 정확히 부합. <em>창업중소기업 세액감면 대상 업종!</em></li>
+          <li><strong>부업종(선택) — <code>62010</code> (컴퓨터 프로그래밍 서비스업):</strong> 주문형 개발·SI 외주 병행 가능성이 있을 때 추가.</li>
+          <li><strong>부업종(추후) — <code>525101</code> (전자상거래 소매업) / <code>743002</code> (광고대행업):</strong> 향후 앱 내 유료 판매·변호사 광고 게재 시 필요에 따라 추가.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>📋 2R MVP 출시 전 챙길 인허가 (참고)</h4>
+        <ul>
+          <li><strong>통신판매업 신고:</strong> 앱 내 유료 결제·구독 판매 전 구청/정부24 신고 (사업자등록 후).</li>
+          <li><strong>위치기반서비스사업 신고:</strong> 모임 GPS 체크인 기능 출시 전 방통위 신고 (사업계획서 2R 일정 반영됨).</li>
+          <li><strong>부가통신사업 신고:</strong> 자본금 1억 원 이하 소규모는 면제 여부 확인 후 진행.</li>
+          <li><strong>개인사업자 과세유형:</strong> 초기 매출 적으면 간이과세자 가능하나, <strong>SW 개발업(일부 지역/업종) 및 B2B 세금계산서 발행</strong>이 필요하면 일반과세자 선택.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>5-3. 홈택스 개인사업자 등록 Step-by-Step (5단계, 무료)</h3>
+    <ol class="steps">
+      <li><strong>사전 준비물:</strong> 공동·금융인증서(또는 간편인증), 임대차계약서 스캔본(비상주 오피스 계약서 + 전대동의서, 또는 자가/무상거주사실확인서).</li>
+      <li><strong>홈택스 접속:</strong> <a href="https://www.hometax.go.kr" target="_blank" rel="noopener">hometax.go.kr</a> 로그인 → <code>국세증명·사업자등록·세금관련 신청/신고</code> → <code>사업자등록신청(개인)</code>.</li>
+      <li><strong>상호·사업장 입력:</strong> 상호 = <strong>원위브</strong>(또는 원위브(OneWeave)), 사업장 소재지 = 임대차계약서 주소 그대로 입력.</li>
+      <li><strong>업종 선택:</strong> 주업종 코드 <strong><code>722000</code> (응용 소프트웨어 개발 및 공급업)</strong> 입력, 개업일자·과세유형 선택.</li>
+      <li><strong>서류 첨부 및 발급:</strong> 임대차계약서 PDF 업로드 후 제출 → <strong>2~3영업일 내</strong>(세무서 실사 없을 시) 홈택스에서 사업자등록증 즉시 출력.</li>
+    </ol>
+
+    <h4>법인(주식회사 원위브) 설립 요약 (추후 선택 시)</h4>
+    <p>
+      ① 상호 중복 확인(인터넷등기소) + 정관·발기인 결정(자본금 예: 100만~1,000만 원, 잔고증명서 발급) →
+      ② <strong>온라인 법인설립시스템</strong>(<code>startbiz.go.kr</code>, 셀프) 또는 <strong>헬프미 등 법인설립 대행</strong>으로 설립등기 신청(등록면허세·교육세 납부) →
+      ③ 등기 완료(3~5영업일) 후 법인등기부등본·법인인감증명서 발급 →
+      ④ 홈택스 법인 사업자등록 신청 + 법인 통장 개설.
+    </p>
+  </section>
+
+  <!-- SECTION 6: CLAUDE & CODEX -->
+  <section id="ai">
+    <div class="sec-head">
+      <h2>🤖 6. Claude Max ($200) + Codex / ChatGPT Pro ($200) 실전 결제 전략</h2>
+      <span class="sec-tag">남은 예산 집중 투입 · 원화 인앱결제</span>
+    </div>
+
+    <div class="callout info">
+      <span class="callout-title">💡 왜 claude.ai 직접 결제가 안 됐는가? (안내 책자 p.13, p.18)</span>
+      신한 클린 선불카드는 <strong>국내 전용 카드</strong>라 해외 가맹점·USD 외화 결제가 자동 차단됩니다.
+      안내 책자 원문에 <strong><em>“해외 사업자 서비스라도 원화(KRW)로 결제되는 경로(국내 인앱결제, 국내 결제대행, 국내 총판·리셀러)는 결제 가능”</em></strong> 및 <strong><em>“사용기간(12/4) 내 결제한 구독은 이용기간이 12/4를 넘겨도 인정”</em></strong>으로 명시되어 있습니다.
+    </div>
+
+    <h3>6-1. 원화 결제 경로 &amp; 가격 비교</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>서비스 / 플랜</th>
+            <th>Apple App Store (iOS 원화)</th>
+            <th>Google Play (안드로이드 원화)</th>
+            <th>50만 이하</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ChatGPT Pro ($200)<br>(Codex 포함)</strong></td>
+            <td class="num"><strong>299,000원 / 월</strong></td>
+            <td class="num">~310,000원대 / 월</td>
+            <td><span class="badge b-green">가능</span></td>
+            <td>iOS 앱스토어가 웹 환율가와 거의 동일해 가장 유리</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Max 20x ($200)</strong></td>
+            <td class="num"><strong>449,000원 / 월</strong></td>
+            <td class="num">앱 내 실시간 원화가 확인 필요</td>
+            <td><span class="badge b-green">가능</span></td>
+            <td>인앱 수수료가 붙지만 50만 이하 &amp; 원화 승인 가능</td>
+          </tr>
+          <tr>
+            <td><strong>Claude Max 5x ($100)</strong></td>
+            <td class="num"><strong>199,000원 / 월</strong></td>
+            <td class="num">앱 내 실시간 원화가 확인 필요</td>
+            <td><span class="badge b-green">가능</span></td>
+            <td>예산 조절이 필요할 때 대안</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>6-2. 절대 걸리면 안 되는 “스토어 합산 50만 원” 회피 5원칙</h3>
+    <ol class="steps">
+      <li><strong>절대 같은 날·같은 스토어에서 두 개 결제 금지:</strong> App Store에서 같은 날 449,000원 + 299,000원 결제 = 당일 동일 가맹점 <strong>748,000원 → 사전승인 위반!</strong></li>
+      <li><strong>날짜 분리 + 가능하면 스토어 분리:</strong> 예) 11/24(화) Apple App Store에서 ChatGPT Pro(299,000원) 결제 → 11/25(수) Google Play(또는 별도 날짜)에서 Claude Max 결제.</li>
+      <li><strong>기집행 Antigravity 가맹점명 확인:</strong> Antigravity(~30만 원)가 이미 Google Play나 Apple로 승인됐다면, 같은 스토어에 추가 결제 시 <strong>기간 누적 50만 원 초과(전체 증빙 검토 대상)</strong>가 됩니다. 11/23 사무국에 사전 확인 후 진행하세요!</li>
+      <li><strong>결제 직후 증빙 2종 캡처 + 자동결제 해지:</strong> ① 스토어 이메일 영수증/결제 상세 화면(주문번호·금액·날짜·서비스명) + ② Claude/ChatGPT 앱 내 Pro/Max 활성 화면 캡처. 그 다음 <strong>스토어 구독 관리에서 자동 갱신 즉시 해지</strong>(해지해도 1개월 만료일까지 정상 이용!).</li>
+      <li><strong>활동보고서 문항2 역할 분담 소명:</strong> AI 구독 3종이 총 ~100만 원 안팎이므로, 보고서에 <strong>① Antigravity: 앱 프로토타입·UI/백엔드 구축 ② Claude Max: 법령 대조표·계약 7종 규칙 엔진·아키텍처 검증 ③ Codex(ChatGPT Pro): 테스트 코드·자동화 검증·코드 교차 리뷰</strong>처럼 각 도구의 명확한 역할 분담과 지켜락 산출물을 적어 적정성 100% 방어!</li>
+    </ol>
+  </section>
+
+  <!-- SECTION 7: MAIL & 8-DAY CHECKLIST -->
+  <section id="action">
+    <div class="sec-head">
+      <h2>✉️ 7. 내일(11/23) 교육 · 사무국 문의 메일 초안 &amp; 8일 체크리스트</h2>
+      <span class="sec-tag">12/1 13:00 마감 역산 실행표</span>
+    </div>
+
+    <div class="callout info">
+      <span class="callout-title">📺 내일 11/23(월) 13:00~17:40 — 1R 기초교육 (핵심: 13:10~13:50 사업비 집행 기준 &amp; 사전질문 답변)</span>
+      장소: 마포 비즈니스 스쿨 고려빌딩 3층 M1 교육장 (서울 마포구 큰우물로76) 또는
+      <a href="https://youtube.com/live/urFkdqfv-pk?feature=share" target="_blank" rel="noopener"><strong>YouTube 실시간 생중계 바로가기 ↗</strong></a>
+    </div>
+
+    <h3>7-1. 한국핀테크지원센터 운영사무국 사전 문의 메일 초안</h3>
+    <div class="copy-bar">
+      <span style="font-size:13px;color:var(--text-muted);">수신: 운영사무국 공식 메일 · 발신: 개인 메일 (복사 후 [성명]만 채워 발송)</span>
+      <button class="btn primary" type="button" onclick="copyMail()">📋 메일 본문 복사하기</button>
+    </div>
+    <div class="mail-box" id="mailText">제목: [모두의창업 1R] [성명] 창업활동자금 집행 적정성 및 증빙 기준 사전 문의
+
+안녕하세요, 한국핀테크지원센터 2차 모두의 창업 1라운드 진출자 [성명]입니다.
+창업활동자금 집행 전 규정 준수를 위해 아래 5가지 사항을 사전 확인 요청드립니다.
+
+1. 운영 예정 상호명 상표 출원 및 개발용 도메인 등록
+제출 아이템인 ‘지켜락’ 서비스와 이를 운영할 창업 예정 상호명 ‘원위브(OneWeave)’의 상표 출원(제9·42류) 및 지켜락 개발·테스트 서버용 도메인 등록을 지급수수료로 집행해도 적정한지 확인 부탁드립니다. (사업계획서·활동보고서에 운영 상호와 서비스 연결을 명시할 예정입니다.)
+
+2. 비상주 공유오피스(사업자등록용) 임차료 기간 기준
+지원 안내 책자(p.11)상 공유오피스 임차료가 지급수수료로 허용되어 있는데, 카드결제 가능한 비상주 공유오피스를 카드 종료일(12/4) 전에 6개월 또는 12개월 단위로 선결제하는 경우 12/4 이후 이용 기간분도 인정되는지, 아니면 1R 기간분만 인정되는지 문의드립니다.
+
+3. 앱스토어·구글플레이 원화 인앱결제로 복수 AI 구독 시 합산 기준 및 증빙
+국내 전용 선불카드 특성상 해외 AI 개발 도구(Claude Max, ChatGPT Pro/Codex 등)를 Apple App Store / Google Play 원화 인앱결제로 각각 구독하려 합니다.
+- ① 서로 다른 AI 서비스이고 결제일도 다르지만 결제 플랫폼(Apple/Google) 가맹점명이 같아 기간 누적이 50만 원을 초과하는 경우, 사전승인이 필요한지 확인 부탁드립니다.
+- ② 인앱결제 시 플랫폼 발행 이메일 영수증 및 구독 상세 화면 캡처로 PG 증빙이 인정되는지 문의드립니다.
+
+4. 상표 출원 대행 플랫폼 카드 일괄 결제 증빙
+마크인포·헬프미 등 온라인 상표 출원 플랫폼에서 관납료와 출원 대행수수료를 카드로 일괄 결제(50만 원 이하)하는 경우, 주문상세내역서(판매자 사업자등록번호 포함)와 특허청 출원번호통지서로 증빙이 충분한지 확인 부탁드립니다.
+
+5. 12/2~12/4 집행분 보고 방식
+활동보고서 마감(12/1 13:00) 이후 카드 종료일(12/4) 사이 결제 건의 증빙 제출 절차가 별도 안내되는지, 아니면 가급적 11/30 이전 결제를 마쳐야 하는지 확인 부탁드립니다.
+
+감사합니다.
+[성명] 드림</div>
+
+    <h3>7-2. 12/1(화) 13:00 최종 제출까지 8일 실행 체크리스트 (체크 상태 자동 저장)</h3>
+    <ul class="check-list" id="checklist">
+      <li><input type="checkbox" data-id="t1"><div class="chk-text"><strong>[11/22 일]</strong> 신한카드 앱에서 현재 실잔액·Antigravity 승인내역(날짜·가맹점명·금액) 확인 및 영수증 확보</div></li>
+      <li><input type="checkbox" data-id="t2"><div class="chk-text"><strong>[11/22 일]</strong> KIPRIS(kipris.or.kr)에서 <code>지켜락</code>·<code>원위브</code>·<code>OneWeave</code> 제9류·제42류 선행상표 조회 (+ 기존 명칭 권리 귀속 확인)</div></li>
+      <li><input type="checkbox" data-id="t3"><div class="chk-text"><strong>[11/22 일]</strong> 운영사무국에 위 5개 질문 메일 발송</div></li>
+      <li><input type="checkbox" data-id="t4"><div class="chk-text"><strong>[11/23 월 13:00]</strong> 1R 기초교육 시청/참석(13:10~13:50 사업비 집행 Q&amp;A) + 사무국 답변 확인</div></li>
+      <li><input type="checkbox" data-id="t5"><div class="chk-text"><strong>[11/23~24 월~화]</strong> <strong>상표 출원 최우선 결제</strong>(마크인포/헬프미, 50만 원 이하) → 주문상세내역서 즉시 PDF 저장</div></li>
+      <li><input type="checkbox" data-id="t6"><div class="chk-text"><strong>[11/23~24 월~화]</strong> <strong>도메인 등록 결제</strong>(호스팅KR/가비아: <code>jikyeolock.com/.kr/.app</code> + <code>oneweave.kr/.co.kr/.dev</code>) → 주문서 저장 + DNS 연결 캡처</div></li>
+      <li><input type="checkbox" data-id="t7"><div class="chk-text"><strong>[11/24 화]</strong> 비상주 오피스(사무국 인정 확인 시) 결제 → 임대차계약서·전대동의서·주문서 저장 + <strong>AI 구독 1건(예: ChatGPT Pro)</strong> 결제 &amp; 자동결제 해지</div></li>
+      <li><input type="checkbox" data-id="t8"><div class="chk-text"><strong>[11/25 수]</strong> <strong>AI 구독 2건(Claude Max)</strong> 다른 날/스토어로 결제 &amp; 자동결제 해지 + <strong>AI 솔루션 2개월차 신청 마감!</strong></div></li>
+      <li><input type="checkbox" data-id="t9"><div class="chk-text"><strong>[11/26~28 목~토]</strong> 특허청 <strong>출원번호통지서</strong> 수령 → 모든 건별 증빙 취합 → 사업계획서(<code>plan_content.py</code>) &amp; 활동보고서(<code>fill_report.py</code>) 작성·재생성</div></li>
+      <li><input type="checkbox" data-id="t10"><div class="chk-text"><strong>[11/30 월 ~ 12/1 화 13:00]</strong> 쪽수 검수(사업계획서 본문 8p / 활동보고서 본문 7p 이내) → 플랫폼 최종 업로드 (연장 없음!)</div></li>
+    </ul>
+  </section>
+
+  <footer>
+    원위브(OneWeave) · 지켜락 1R 창업활동자금 실행 가이드 · 작성일 2026-11-22<br>
+    ※ 도메인 등록 가능 여부는 2026-11-22 RDAP/WHOIS 실조회 기준이며 결제 시점 등록 가능 여부는 대행사 검색창에서 최종 확인하세요. 가격(VAT 포함)은 프로모션·환율에 따라 소폭 변동될 수 있습니다.
+  </footer>
+</main>
+
+<script>
+  const LIMIT = 2000000;
+  const fmt = n => n.toLocaleString('ko-KR') + '원';
+
+  function recalc() {
+    const used = Number(document.getElementById('cUsed').value) || 0;
+    const tm = Number(document.getElementById('cTm').value) || 0;
+    const dom = Number(document.getElementById('cDom').value) || 0;
+    const off = Number(document.getElementById('cOff').value) || 0;
+    const gpt = Number(document.getElementById('cGpt').value) || 0;
+    const claude = Number(document.getElementById('cClaude').value) || 0;
+    const etc = Number(document.getElementById('cEtc').value) || 0;
+
+    const newly = tm + dom + off + gpt + claude + etc;
+    const total = used + newly;
+    const remain = LIMIT - total;
+    const pct = Math.min(100, Math.max(0, Math.round((total / LIMIT) * 100)));
+
+    document.getElementById('sumTotal').textContent = fmt(total);
+    document.getElementById('stUsed').textContent = fmt(used);
+    document.getElementById('stNew').textContent = fmt(newly);
+    document.getElementById('stRemain').textContent = (remain < 0 ? '-' : '') + fmt(Math.abs(remain));
+    document.getElementById('stRemain').style.color = remain < 0 ? 'var(--red)' : 'var(--green)';
+
+    const bar = document.getElementById('sumBar');
+    bar.style.width = pct + '%';
+    bar.style.background = remain < 0 ? 'var(--red)' : (pct > 90 ? 'var(--green)' : 'var(--primary)');
+
+    const warns = [];
+    if (remain < 0) {
+      warns.push({ type: 'danger', msg: `🚨 200만 원 한도를 ${fmt(Math.abs(remain))} 초과했습니다. 항목을 줄여주세요.` });
+    }
+    const items = [
+      ['상표 출원', tm], ['도메인', dom], ['비상주 오피스', off],
+      ['ChatGPT Pro', gpt], ['Claude Max', claude], ['기타', etc]
+    ];
+    for (const [name, val] of items) {
+      if (val > 500000) {
+        warns.push({ type: 'danger', msg: `🚨 [${name}] ${fmt(val)} → 단일 50만 원 초과! 결제 전 멘토기관 사전승인 필수.` });
+      }
+    }
+    if (gpt > 0 && claude > 0) {
+      warns.push({ type: 'amber', msg: '⚠️ ChatGPT Pro + Claude Max: 같은 날·같은 스토어 결제 시 당일 50만 초과 위반! 반드시 다른 날짜(가능하면 iOS/Android 분리)로 결제하세요.' });
+    }
+    if (off > 0) {
+      warns.push({ type: 'amber', msg: '⚠️ 비상주 오피스: 12/4 이후 기간 선결제 인정 여부를 11/23 교육/사무국에 확인한 뒤 결제하세요.' });
+    }
+    if (remain >= 0 && warns.every(w => w.type !== 'danger')) {
+      warns.push({ type: 'ok', msg: `✅ 전 항목 단일 50만 원 이하 · 한도 내 설계 완료 (잔액 ${fmt(remain)}은 미사용 시 감점 없음).` });
+    }
+
+    document.getElementById('calcWarnings').innerHTML = warns
+      .map(w => `<div class="warn-chip ${w.type}">${w.msg}</div>`).join('');
+  }
+
+  function applyPreset(kind) {
+    if (kind === 'full') {
+      document.getElementById('cTm').value = '377600';
+      document.getElementById('cDom').value = '145000';
+      document.getElementById('cOff').value = '330000';
+      document.getElementById('cGpt').value = '299000';
+      document.getElementById('cClaude').value = '449000';
+      document.getElementById('cEtc').value = '80000';
+    } else if (kind === 'noOffice') {
+      document.getElementById('cTm').value = '448000';
+      document.getElementById('cDom').value = '145000';
+      document.getElementById('cOff').value = '0';
+      document.getElementById('cGpt').value = '299000';
+      document.getElementById('cClaude').value = '449000';
+      document.getElementById('cEtc').value = '50000';
+    } else if (kind === 'safe') {
+      document.getElementById('cTm').value = '224000';
+      document.getElementById('cDom').value = '65000';
+      document.getElementById('cOff').value = '240000';
+      document.getElementById('cGpt').value = '299000';
+      document.getElementById('cClaude').value = '449000';
+      document.getElementById('cEtc').value = '0';
+    }
+    recalc();
+  }
+
+  function filterDomains(mode, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#domainTable tbody tr').forEach(tr => {
+      const grp = tr.dataset.group;
+      const avail = tr.dataset.avail === '1';
+      let show = true;
+      if (mode === 'avail') show = avail;
+      else if (mode === 'jikyeo') show = grp === 'jikyeo';
+      else if (mode === 'oneweave') show = grp === 'oneweave';
+      tr.style.display = show ? '' : 'none';
+    });
+  }
+
+  function copyMail() {
+    const txt = document.getElementById('mailText').textContent;
+    navigator.clipboard.writeText(txt).then(() => {
+      alert('메일 초안이 클립보드에 복사되었습니다. [성명] 부분만 수정해 발송하세요!');
+    }).catch(() => {
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById('mailText'));
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      alert('메일 초안이 복사되었습니다!');
+    });
+  }
+
+  // Checklist persistence
+  const CHK_KEY = 'oneweave_1r_checklist_v1';
+  function loadChecks() {
+    const saved = JSON.parse(localStorage.getItem(CHK_KEY) || '{}');
+    document.querySelectorAll('#checklist input[type="checkbox"]').forEach(cb => {
+      cb.checked = !!saved[cb.dataset.id];
+      cb.closest('li').classList.toggle('done', cb.checked);
+      cb.addEventListener('change', () => {
+        saved[cb.dataset.id] = cb.checked;
+        localStorage.setItem(CHK_KEY, JSON.stringify(saved));
+        cb.closest('li').classList.toggle('done', cb.checked);
+      });
+    });
+    document.querySelectorAll('#checklist li').forEach(li => {
+      li.addEventListener('click', e => {
+        if (e.target.tagName !== 'INPUT') {
+          const cb = li.querySelector('input');
+          cb.checked = !cb.checked;
+          cb.dispatchEvent(new Event('change'));
+        }
+      });
+    });
+  }
+
+  // Dark mode
+  const themeBtn = document.getElementById('themeToggle');
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'dark' ? '☀️ 라이트' : '🌙 다크';
+    localStorage.setItem('oneweave_theme', t);
+  }
+  themeBtn.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') || 'light';
+    applyTheme(cur === 'dark' ? 'light' : 'dark');
+  });
+  applyTheme(localStorage.getItem('oneweave_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
+  recalc();
+  loadChecks();
+</script>
+</body>
+</html>
